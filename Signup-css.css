@@ -1,0 +1,136 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-image: url(Images/login-backg.jpg);
+    background-position: center;
+    background-size:  cover;font-family: sans-serif;
+    margin-top: 40px;
+}
+
+.regform{
+    width: 800px;
+    background-color: rgb(0, 0, 0, 0.6);
+    margin: auto;
+    color: #ffffff;
+    padding: 10px 0px 10px 0px;
+    text-align: center;
+    border-radius: 15px 15px 0p 0p;
+}
+.main{
+    background-color: rgb(0,0,0,0.5);
+    width: 800px;
+    margin: auto;
+}
+form{
+    padding: 10px;
+}
+#name{
+    width: 100%;
+    height: 1200px;
+}
+.name{
+    margin-left: 25px;
+    margin-top: 30px;
+    width: 125px;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+
+}
+.namelabel{
+    margin-left: 100px;
+    margin-top: 30px;
+    width: 125px;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    
+}
+.tradename, .emailinput, .username, .password, .address, .city, .state, .website, .option{
+    position: relative;
+    left: 40px;
+    top: -29px;
+    width: 450px;
+    line-height: 35px;
+    border-radius: 6px;
+    padding: 0 22px;
+    font-size: 16px;
+}
+
+.code{
+    position: relative;
+    left: 105px;
+    top: -40px;
+    line-height: 35px;
+    width: 100px;
+    border-radius: 6px;
+    padding: 0 22px;
+    font-size: 16px;
+    color: #555;
+ 
+}
+.number{
+    position: relative;
+    left: 90px;
+    top: -40px;
+    line-height: 35px;
+    width: 280px;
+    border-radius: 6px;
+    padding: 0 22px;
+    font-size: 16px;
+    color: #555;
+}
+
+.area-code{
+    position: relative;
+    color: #e5e5e5;
+    text-transform: capitalize;
+    font-size: 16px;
+    left: 5px;
+    top: -1px;
+}
+.phone-number{
+    
+    position: relative;
+    color: #e5e5e5;
+    text-transform: capitalize;
+    font-size: 16px;
+    left: -190px;
+    top: -1px;
+}
+.option{ 
+    position: relative;
+    left: -40px;
+    top: -40px;
+    line-height: 35px;
+    width: 280px;
+    height: 30px;
+    border-radius: 6px;
+    padding: 0 22px;
+    font-size: 16px;
+    color: #555;
+    outline: none;
+    overflow: hidden;
+}
+.option option{
+    font-size: 16px;
+}
+
+button{
+    background-color: #3BAF9F;
+    display: block;
+    margin: 20px 0px 0px 20px;
+    text-align: center;
+    border-radius: 12px;
+    border: 2px solid #366473;
+    padding: 14px 110px;
+    outline: none;
+    color: white;
+    cursor: pointer;
+    transition: 0.25px;
+}
+button:hover{
+    background-color: #5390F5;
+}
