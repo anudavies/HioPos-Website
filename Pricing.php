@@ -235,11 +235,34 @@ session_start();
 </table>
 
     </div>
+    
+    <form id="paymentForm">
+    <div class="form-group">
+      <label for="email">Email Address</label>
+      <input type="email" id="emailaddress" required />
+    </div>
+    <div class="form-group">
+      <label for="amount">Amount</label>
+      <input type="tel" id="amount" required />
+    </div>
+    <div class="form-group">
+      <label for="firstname">First Name</label>
+      <input type="text" id="firstname" />
+    </div>
+    <div class="form-group">
+      <label for="lastname">Last Name</label>
+      <input type="text" id="lastname" />
+    </div>
+    <div class="form-submit">
+      <button type="submit" onclick="payWithPaystack()"> Pay </button>
+    </div>
+  </form>
+
 
     <script type="text/JavaScript">
        function IsNumeric(n) {
     return !isNaN(n);
-} 
+    } 
 
 function CleanNumber(value) {
 
@@ -361,6 +384,35 @@ $("input." + actualClass).attr("value", "");
 });
     
     </script>
-
+<script src="https://js.paystack.co/v1/inline.js"></script> 
 </body>
+<script>
+  const paymentForm = document.getElementById('paymentForm');
+  if(paymentForm){
+    paymentForm.addEventListener("submit", payWithPaystack, false);
+    function payWithPaystack(e) {
+      e.preventDefault();
+      let handler = PaystackPop.setup({
+        key: 'pk_test_77ca67382104284df5a13b8295d0cbdf58ba5d7e', // Replace with your public key
+        email: document.getElementById("emailaddress").value,
+        amount: document.getElementById("amount").value * 100,
+        ref: ''+Math.floor((Math.random() * 1000000000) + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
+        // label: "Optional string that replaces customer email"
+        onClose: function(){
+          alert('Window closed.');
+        },
+        callback: function(response){
+          let message = 'Payment complete! Reference: ' + response.reference;
+          alert(message);
+        }
+      });
+      handler.openIframe();
+}
+  }
+  else
+  {
+    alert("Error");
+  }
+
+</script>
 </html>
